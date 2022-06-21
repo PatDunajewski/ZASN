@@ -118,7 +118,7 @@ def input_fn_builder(data_dir, vocab_model_file, max_encoder_length,
     return example
 
   def _tokenize_example(example):
-    text, label = example["sentence"], example["label"]
+    text, label = example["text"], example["label"]
     tokenizer = tft.SentencepieceTokenizer(
         model=tf.io.gfile.GFile(vocab_model_file, "rb").read())
     if substitute_newline:
